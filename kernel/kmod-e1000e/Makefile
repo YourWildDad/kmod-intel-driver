@@ -10,7 +10,6 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://downloadmirror.intel.com/15817/eng/$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_HASH:=4696BBE30E959C5A1BD006BE066358FF5FE76464
 
-PKG_MAINTAINER:=YourWildDad <053700@gmail.com>
 PKG_LICENSE:=GPL-2.0-only
 
 include $(INCLUDE_DIR)/package.mk
