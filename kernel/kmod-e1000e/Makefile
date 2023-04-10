@@ -31,9 +31,7 @@ define KernelPackage/e1000e/description
  Kernel modules for Intel(R) PRO/1000 PCIe Ethernet adapters $(PKG_VERSION).
 endef
 
-$(eval $(call KernelPackage,e1000e))
-
 MAKE_FLAGS += KERNEL_SRC=$(LINUX_DIR) ARCH=$(LINUX_KARCH)
 MAKE_PATH:=kernelmod
 
-$(eval $(call KernelPackage,macremapper))
+$(eval $(call KernelPackage,e1000e))
