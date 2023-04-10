@@ -15,11 +15,11 @@ PKG_LICENSE:=GPL-2.0-only
 
 include $(INCLUDE_DIR)/package.mk
 
-define KernelPackage/e1000e
+define KernelPackage/e1000e-new
   SUBMENU:=$(NETWORK_DEVICES_MENU)
   TITLE:=Intel(R) PRO/1000 PCIe cards kernel support $(PKG_VERSION)
   DEPENDS:=@PCIE_SUPPORT +kmod-ptp
-  KCONFIG:=CONFIG_E1000E_NEW
+  KCONFIG:=CONFIG_E1000E
   FILES:=$(PKG_BUILD_DIR)/e1000e.ko
   AUTOLOAD:=$(call AutoProbe,e1000e)
   MODPARAMS.e1000e:= \
@@ -27,11 +27,11 @@ define KernelPackage/e1000e
     InterruptThrottleRate=4,4,4,4,4,4,4,4
 endef
 
-define KernelPackage/e1000e/description
+define KernelPackage/e1000e-new/description
  Kernel modules for Intel(R) PRO/1000 PCIe Ethernet adapters $(PKG_VERSION).
 endef
 
 MAKE_FLAGS += KERNEL_SRC=$(LINUX_DIR) ARCH=$(LINUX_KARCH)
 MAKE_PATH:=kernelmod
 
-$(eval $(call KernelPackage,e1000e))
+$(eval $(call KernelPackage,e1000e-new))
